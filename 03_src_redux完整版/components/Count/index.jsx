@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 // 引入store
-import store from "../../redux/store";
+import store from "../redux/store";
+// 引入action
+import {
+  createDecrementAction,
+  createIncrementAction,
+} from "../redux/count_action";
 export default class Count extends Component {
   /*
   componentDidMount() {
@@ -14,37 +19,24 @@ export default class Count extends Component {
   //   加法
   increment = () => {
     const { value } = this.selectNumber;
-    store.dispatch({
-      type: "increment",
-      data: value * 1,
-    });
+    store.dispatch(createIncrementAction(value * 1));
   };
   //   减法
   decrement = () => {
     const { value } = this.selectNumber;
-    store.dispatch({
-      type: "decrement",
-      data: value * 1,
-    });
+    store.dispatch(createDecrementAction(value * 1));
   };
   //   奇数加
   incrementIfOdd = () => {
     const count = store.getState();
     const { value } = this.selectNumber;
-    if (count % 2 !== 0)
-      store.dispatch({
-        type: "increment",
-        data: value * 1,
-      });
+    if (count % 2 !== 0) store.dispatch(createIncrementAction(value * 1));
   };
   //   异步加
   incrementAsync = () => {
     setTimeout(() => {
       const { value } = this.selectNumber;
-      store.dispatch({
-        type: "increment",
-        data: value * 1,
-      });
+      store.dispatch(createIncrementAction(value * 1));
     }, 500);
   };
   render() {
