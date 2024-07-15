@@ -26,5 +26,6 @@ function mapDispatchToProps(dispatch) {
     },
   };
 }
-// 使用connect()()创建并暴露一个Count容器组件
+// 使用connect()()创建并暴露一个Count容器组件 一般写法
 export default connect(mapStateToProps, mapDispatchToProps)(CountUI);
+
