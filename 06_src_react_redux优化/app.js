@@ -6,7 +6,10 @@ export default class App extends Component {
     return (
       <div>
         {/* 给Count容器组件传递store */}
-        <Count store={store}/>
+        {/* <Count store={store}/> */}
+        
+        {/* 使用provider给所有容器组件注入store */}
+        <Count/>
       </div>
     )
   }
