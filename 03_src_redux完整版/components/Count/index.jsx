@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 // 引入store
-import store from "../redux/store";
+import store from "../../redux/store";
 // 引入action
 import {
   createDecrementAction,
   createIncrementAction,
-} from "../redux/count_action";
+} from "../../redux/count_action";
 export default class Count extends Component {
   /*
   componentDidMount() {
